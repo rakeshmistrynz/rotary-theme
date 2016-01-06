@@ -1,0 +1,37 @@
+/*
+Theme Name: Rotary
+Author: Rakesh Mistry
+Description: Wordpress Theme For Orewa Rotary Club
+Version: 0.1
+
+*/
+
+/* Table of content
+-----------------------------------------------
+1. Resets
+2. Global
+3. Content
+4. Post styling
+5. Singe Post/Page Pagination
+6. Media
+7. Widgets
+8. Buttons
+9. Infinite Scroll
+10. Custom Styles
+11. Navigation
+12. Comments
+13. Attachment styling
+14. Gallery
+15. Footer
+16. Social icons
+17. Call For Action
+18. Customs Styles (Rotary Theme)
+*/
+
+/* =Resets
+----------------------------------------------- */
+@import "compass/reset";
+@import 'variables';
+@import 'mixin';
+@import 'base';
+@import 'rotary';

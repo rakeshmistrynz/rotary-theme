@@ -1,0 +1,2809 @@
+/*
+Theme Name: Rotary
+Author: Rakesh Mistry
+Description: Wordpress Theme For Orewa Rotary Club
+Version: 0.1
+*/
+
+/* Table of content
+-----------------------------------------------
+1. Resets
+2. Global
+3. Content
+4. Post styling
+5. Singe Post/Page Pagination
+6. Media
+7. Widgets
+8. Buttons
+9. Infinite Scroll
+10. Custom Styles
+11. Navigation
+12. Comments
+13. Attachment styling
+14. Gallery
+15. Footer
+16. Social icons
+17. Call For Action
+18. Customs Styles (Rotary Theme)
+*/
+/* =Resets
+----------------------------------------------- */
+/* line 5, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* =Global
+----------------------------------------------- */
+/* line 3, scss/_base.scss */
+body {
+  color: #6B6B6B;
+  background-color: #F2F2F2;
+  word-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* line 12, scss/_base.scss */
+a {
+  color: #DA4453;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 21, scss/_base.scss */
+a:hover,
+a:focus {
+  color: #DADADA;
+  text-decoration: none;
+}
+
+/* line 27, scss/_base.scss */
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 33, scss/_base.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #DA4453;
+  font-weight: 700;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* line 39, scss/_base.scss */
+h1,
+.h1 {
+  font-size: 28px;
+}
+
+/* line 44, scss/_base.scss */
+h2,
+.h2 {
+  font-size: 24px;
+}
+
+/* line 49, scss/_base.scss */
+h3,
+.h3 {
+  font-size: 20px;
+}
+
+/* line 54, scss/_base.scss */
+h4,
+.h4 {
+  font-size: 16px;
+}
+
+/* line 59, scss/_base.scss */
+h5,
+.h5 {
+  font-size: 14px;
+}
+
+/* line 64, scss/_base.scss */
+h6,
+.h6 {
+  font-size: 13px;
+}
+
+/* line 69, scss/_base.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 73, scss/_base.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+}
+
+/* line 83, scss/_base.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
+}
+
+/* line 87, scss/_base.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 93, scss/_base.scss */
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
+}
+
+/* line 96, scss/_base.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
+}
+
+/* line 101, scss/_base.scss */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: #666;
+  border: 1px solid #E8E8E8;
+  border-radius: 3px;
+}
+
+/* line 112, scss/_base.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+/* line 121, scss/_base.scss */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 3px;
+}
+
+/* line 129, scss/_base.scss */
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 100%;
+}
+
+/* Alignment */
+/* line 138, scss/_base.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 143, scss/_base.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 148, scss/_base.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+/* line 155, scss/_base.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* line 160, scss/_base.scss */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/* Clearing floats */
+/* line 182, scss/_base.scss */
+.clear:before,
+.clear:after,
+.gallery:before,
+.gallery:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.home-widget-area:before {
+  content: '';
+  display: table;
+}
+
+/* line 201, scss/_base.scss */
+.clear:after,
+.entry-content:after,
+.gallery:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.home-widget-area:before {
+  clear: both;
+}
+
+/* =Content
+----------------------------------------------- */
+/* line 217, scss/_base.scss */
+.hentry {
+  margin: 0;
+}
+
+/* line 220, scss/_base.scss */
+.byline,
+.updated {
+  display: none;
+}
+
+/* line 224, scss/_base.scss */
+.single .byline,
+.group-blog .byline {
+  display: inline;
+  margin-right: 0;
+}
+
+/* line 229, scss/_base.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+/* line 234, scss/_base.scss */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* line 238, scss/_base.scss */
+.main-content-area {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* =Post styling
+----------------------------------------------- */
+/* line 244, scss/_base.scss */
+.entry-meta a {
+  font-size: 13px;
+  color: #6B6B6B;
+}
+
+/* line 248, scss/_base.scss */
+.entry-meta {
+  margin-bottom: 30px;
+}
+
+/* line 251, scss/_base.scss */
+footer.entry-meta {
+  margin-bottom: 0;
+}
+
+/* line 254, scss/_base.scss */
+.page-header {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 259, scss/_base.scss */
+.entry-meta .fa {
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+/* line 263, scss/_base.scss */
+.entry-meta span {
+  margin-right: 10px;
+}
+
+/* line 266, scss/_base.scss */
+.entry-title {
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* line 270, scss/_base.scss */
+.entry-title a {
+  color: #444;
+}
+
+/* line 273, scss/_base.scss */
+.entry-title a:hover {
+  color: #DA4453;
+}
+
+/* line 276, scss/_base.scss */
+.btn.btn-default.read-more {
+  float: right;
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 11px 13px;
+}
+
+/* line 282, scss/_base.scss */
+.search .btn.btn-default.read-more {
+  float: none;
+}
+
+/* line 285, scss/_base.scss */
+hr.section-divider {
+  border-color: #E8E8E8;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* author */
+/* line 291, scss/_base.scss */
+.author-bio {
+  clear: both;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+/* line 297, scss/_base.scss */
+.author-bio .avatar {
+  float: left;
+}
+
+/* line 300, scss/_base.scss */
+.author-bio-content h4 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* line 304, scss/_base.scss */
+.author-bio .author-bio-content {
+  margin-left: 74px;
+}
+
+/* line 307, scss/_base.scss */
+.secondary-content-box {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 311, scss/_base.scss */
+.single-view,
+.blog-item-wrap {
+  margin-bottom: 50px;
+}
+
+/* line 315, scss/_base.scss */
+.post-inner-content {
+  padding: 45px 50px;
+  background-color: #fff;
+  border-top: none;
+}
+
+/* line 324, scss/_base.scss */
+.entry-title {
+  margin-top: 0;
+}
+
+/* line 327, scss/_base.scss */
+.more-link,
+.says {
+  display: none;
+}
+
+/* line 331, scss/_base.scss */
+.comment-author .fn,
+.author-bio h4,
+.comment-reply-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* =Singe Post/Page Pagination
+----------------------------------------------- */
+/* line 340, scss/_base.scss */
+.page-links span {
+  display: inline-block;
+  color: #fff;
+  background-color: #DA4453;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-left: 2px;
+}
+
+/* line 348, scss/_base.scss */
+.page-links a span {
+  background-color: inherit;
+  border: 1px solid #E8E8E8;
+  color: #DA4453;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 357, scss/_base.scss */
+.page-links a:hover span {
+  background-color: #DA4453;
+  border: 1px solid #DA4453;
+  color: #fff;
+}
+
+/* line 362, scss/_base.scss */
+.pagination .fa-chevron-left,
+.pagination .fa-chevron-right {
+  font-size: 12px;
+}
+
+/* line 366, scss/_base.scss */
+.pagination li a {
+  color: #DA4453;
+}
+
+/* line 369, scss/_base.scss */
+.pagination li:hover a {
+  color: #DA4453;
+}
+
+/* line 372, scss/_base.scss */
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #FFF;
+  background-color: #DA4453;
+  border-color: #DA4453;
+}
+
+/* line 382, scss/_base.scss */
+.pagination > li > a,
+.pagination > li > span {
+  padding: 9px 14px;
+  border-color: #dadada;
+}
+
+/* line 387, scss/_base.scss */
+.bottom-pagination {
+  text-align: center;
+}
+
+/* =Asides
+----------------------------------------------- */
+/* line 394, scss/_base.scss */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/* =Media
+----------------------------------------------- */
+/* line 402, scss/_base.scss */
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* line 410, scss/_base.scss */
+.single-featured {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  display: block;
+  margin: auto;
+}
+
+/* line 418, scss/_base.scss */
+.single-featured:hover {
+  opacity: 0.8;
+}
+
+/* line 421, scss/_base.scss */
+.wp-caption {
+  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* line 426, scss/_base.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+}
+
+/* line 429, scss/_base.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/* line 432, scss/_base.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+/* line 437, scss/_base.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* =Widgets
+----------------------------------------------- */
+/* Make sure select elements fit in widgets */
+/* line 447, scss/_base.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget */
+/* line 451, scss/_base.scss */
+.widget_search .search-submit {
+  display: none;
+}
+
+/* line 454, scss/_base.scss */
+.widget ul li {
+  list-style: none;
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 460, scss/_base.scss */
+.widget ul {
+  padding: 0;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+/* line 465, scss/_base.scss */
+.widget ul.nav.nav-tabs {
+  padding: 0;
+}
+
+/* line 468, scss/_base.scss */
+#secondary .widget {
+  margin-bottom: 50px;
+  color: #C1C0C0;
+  overflow: hidden;
+}
+
+/* line 473, scss/_base.scss */
+#secondary .widget:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 476, scss/_base.scss */
+.tab-content ul li {
+  list-style: none;
+}
+
+/* line 479, scss/_base.scss */
+#secondary .widget_archive ul li:before,
+#secondary .widget_categories ul li:before,
+#secondary .widget_recent_comments ul li:before {
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+
+/* line 485, scss/_base.scss */
+#secondary .widget_archive ul li:before {
+  content: '\f073';
+}
+
+/* line 488, scss/_base.scss */
+#secondary .widget_categories ul li:before {
+  content: '\f115';
+}
+
+/* line 491, scss/_base.scss */
+#secondary .widget_recent_comments ul li:before {
+  content: '\f0e5';
+}
+
+/* line 494, scss/_base.scss */
+.well {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #DADADA;
+  overflow: hidden;
+  clear: both;
+}
+
+/* line 501, scss/_base.scss */
+#secondary .widget > h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: #636467;
+}
+
+/* line 508, scss/_base.scss */
+#secondary .widget a {
+  color: #C1C0C0;
+}
+
+/* line 511, scss/_base.scss */
+.widget ul ul {
+  padding: 10px;
+}
+
+/* line 514, scss/_base.scss */
+.widget #social ul li {
+  border-bottom: 0;
+}
+
+/* line 517, scss/_base.scss */
+.not-found-widget {
+  margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+  /* line 521, scss/_base.scss */
+  #secondary {
+    clear: both;
+  }
+}
+/* Custom Category Widget */
+/* line 527, scss/_base.scss */
+.cats-widget ul li span {
+  float: right;
+}
+
+/* Recent Post widgets */
+/* line 531, scss/_base.scss */
+.popular-posts-wrapper .post {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+
+/* line 536, scss/_base.scss */
+.popular-posts-wrapper .post .post-image {
+  width: 60px;
+  height: 60px;
+  float: left;
+  display: block;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #DADADA;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* line 548, scss/_base.scss */
+.popular-posts-wrapper .post .post-image img {
+  border-radius: 4px;
+  opacity: 1;
+  -webkit-transition: opacity  0.5s;
+  -moz-transition: opacity  0.5s;
+  -o-transition: opacity  0.5s;
+  transition: opacity  0.5s;
+}
+
+/* line 556, scss/_base.scss */
+.popular-posts-wrapper .post .post-image img:hover {
+  opacity: 0.6 !important;
+}
+
+/* line 559, scss/_base.scss */
+.popular-posts-wrapper .post .post-content {
+  margin-left: 80px;
+}
+
+/* line 562, scss/_base.scss */
+.widget .post-content > span {
+  display: block;
+}
+
+/* line 565, scss/_base.scss */
+#secondary .widget .post-content a {
+  color: #DA4453;
+}
+
+/* line 568, scss/_base.scss */
+#secondary .widget .post-content a:hover {
+  color: #DADADA;
+}
+
+/* line 571, scss/_base.scss */
+.widget .post-content span {
+  font-size: 12px;
+}
+
+/* line 574, scss/_base.scss */
+.tagcloud {
+  margin-top: 25px;
+}
+
+/* line 577, scss/_base.scss */
+.tagcloud a {
+  padding: 6px 7px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  line-height: 100%;
+  display: inline-block;
+  color: #FFF !important;
+  background-color: #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 12px !important;
+}
+
+/* line 589, scss/_base.scss */
+.tagcloud a:hover {
+  background-color: #DA4453;
+  border-color: #DA4453;
+}
+
+/* =Buttons
+----------------------------------------------- */
+/* line 596, scss/_base.scss */
+.btn-default, .label-default {
+  background-color: #DA4453;
+  border-color: #DA4453;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 604, scss/_base.scss */
+.btn-default:hover,
+.label-default[href]:hover,
+.label-default[href]:focus,
+.btn-default:hover, .btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+#image-navigation .nav-previous a:hover,
+#image-navigation .nav-next a:hover {
+  background-color: #363636;
+  border-color: #363636;
+}
+
+/* line 615, scss/_base.scss */
+.btn.btn-default {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+/* line 619, scss/_base.scss */
+.input-group-btn:last-child > .btn {
+  margin-left: 0;
+}
+
+/* line 622, scss/_base.scss */
+button {
+  background-color: #DA4453;
+  border: none;
+  text-transform: uppercase;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 12px;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 636, scss/_base.scss */
+button:hover {
+  background-color: #363636;
+}
+
+/* line 639, scss/_base.scss */
+#subscription-toggle {
+  float: right;
+}
+
+/* =Infinite Scroll
+----------------------------------------------- */
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 646, scss/_base.scss */
+.infinite-scroll .paging-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+/* line 652, scss/_base.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/* line 655, scss/_base.scss */
+#infinite-handle span {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 20px;
+  background: transparent;
+  border: 1px solid #DADADA;
+  background: #fff;
+  color: #DA4453;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 671, scss/_base.scss */
+#infinite-handle span:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* =Custom Styles
+----------------------------------------------- */
+/* line 677, scss/_base.scss */
+.site-branding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 681, scss/_base.scss */
+.site-description {
+  color: #777;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+/* line 686, scss/_base.scss */
+.page-template-page-homepage-php .carousel {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  /* line 692, scss/_base.scss */
+  .pull-right {
+    float: none !important;
+  }
+
+  /* line 695, scss/_base.scss */
+  .pull-left {
+    float: none !important;
+  }
+
+  /* line 698, scss/_base.scss */
+  .flex-caption {
+    display: none;
+  }
+}
+/* =Navigation
+----------------------------------------------- */
+/* line 706, scss/_base.scss */
+.post-navigation a,
+.paging-navigation a {
+  border: 1px solid #DADADA;
+  background-color: #FFF;
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+/* line 717, scss/_base.scss */
+.post-navigation a:hover,
+.paging-navigation a:hover {
+  color: #FFF;
+  background: #DA4453;
+  text-decoration: none;
+}
+
+/* line 723, scss/_base.scss */
+.paging-navigation {
+  text-transform: uppercase;
+}
+
+/* line 726, scss/_base.scss */
+.post-navigation .nav-previous,
+.paging-navigation .nav-previous {
+  float: left;
+}
+
+/* line 730, scss/_base.scss */
+.post-navigation .nav-next,
+.paging-navigation .nav-next {
+  float: right;
+  text-align: right;
+}
+
+/* line 735, scss/_base.scss */
+.more-link {
+  float: right;
+  margin: 10px 0;
+}
+
+/* line 739, scss/_base.scss */
+.single .nav-links {
+  margin-top: 30px;
+}
+
+/* line 742, scss/_base.scss */
+.nav > li > a {
+  text-transform: uppercase;
+}
+
+/* line 745, scss/_base.scss */
+.navbar.navbar-default {
+  background-color: #363636;
+  font-family: 'Open Sans', serif;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* line 751, scss/_base.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #F5F7FA;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* line 757, scss/_base.scss */
+.navbar > .container .navbar-brand {
+  color: #DADADA;
+  font-size: 20px;
+  margin: 13px 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* line 763, scss/_base.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  border-right: none;
+  border-left: none;
+}
+
+/* line 769, scss/_base.scss */
+.navbar {
+  border-radius: 0;
+}
+
+/* line 772, scss/_base.scss */
+.navbar-default {
+  border: none;
+}
+
+/* line 775, scss/_base.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #DA4453;
+  background-color: transparent;
+}
+
+/* line 786, scss/_base.scss */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #DA4453;
+}
+
+@media (max-width: 767px) {
+  /* line 794, scss/_base.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
+    color: #fff;
+    background-color: #DA4453;
+  }
+}
+/* line 801, scss/_base.scss */
+.dropdown-menu {
+  font-size: 13px;
+}
+
+/* line 804, scss/_base.scss */
+.navbar-default .navbar-nav .current-menu-ancestor a.dropdown-toggle {
+  color: #DA4453;
+  background-color: transparent;
+}
+
+/* line 808, scss/_base.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li.active > a {
+  color: #fff;
+}
+
+/* line 811, scss/_base.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #DADADA;
+}
+
+@media (min-width: 979px) {
+  /* line 815, scss/_base.scss */
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+/* line 819, scss/_base.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 822, scss/_base.scss */
+.dropdown-menu > li > a {
+  padding: 10px 15px;
+  color: #636467;
+}
+
+/* line 826, scss/_base.scss */
+.dropdown-menu,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  border: none;
+}
+
+/* line 832, scss/_base.scss */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* line 838, scss/_base.scss */
+.dropdown-menu .divider {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* line 841, scss/_base.scss */
+.navbar-nav > li > .dropdown-menu {
+  padding: 0;
+}
+
+/* line 844, scss/_base.scss */
+.navbar-nav > li > a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* line 848, scss/_base.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+/* line 852, scss/_base.scss */
+.nav.navbar-nav {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  /* line 856, scss/_base.scss */
+  .nav.navbar-nav {
+    float: none;
+  }
+
+  /* line 859, scss/_base.scss */
+  .navbar > .container .navbar-brand {
+    margin: 0;
+  }
+
+  /* line 862, scss/_base.scss */
+  .navbar-default .navbar-nav > li > a {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* =Comments
+----------------------------------------------- */
+/* line 872, scss/_base.scss */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/* line 877, scss/_base.scss */
+#respond {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+}
+
+/* line 882, scss/_base.scss */
+#respond > p, #respond p.comment-notes, p.logged-in-as {
+  margin-bottom: 10px;
+}
+
+/* line 886, scss/_base.scss */
+p.logged-in-as {
+  padding-bottom: 0px;
+}
+
+/* line 889, scss/_base.scss */
+.comment-list {
+  margin-bottom: 40px !important;
+  margin-left: 0px !important;
+  padding-left: 0;
+}
+
+/* line 894, scss/_base.scss */
+.comment-list,
+.comment-list .children {
+  list-style: none;
+}
+
+/* line 898, scss/_base.scss */
+.comment .comment-body {
+  background-color: #ffffff;
+  margin: 0;
+  overflow: hidden;
+  padding: 25px;
+  margin-top: 2em;
+  padding-left: 100px;
+  position: relative;
+  border: 1px solid #E8E8E8;
+  border-bottom: 1px solid #DADADA;
+  border-radius: 4px;
+}
+
+/* line 910, scss/_base.scss */
+.comment-list .children {
+  margin-left: 0px !important;
+  padding-left: 40px;
+  border-left: 1px solid #DADADA;
+  background-repeat: no-repeat;
+  background-position: left 20px;
+}
+
+/* line 917, scss/_base.scss */
+.comment-list li.comment > div img.avatar {
+  position: absolute;
+  left: 29px;
+  top: 29px;
+}
+
+/* line 922, scss/_base.scss */
+#comment-form-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+/* line 926, scss/_base.scss */
+.comment-author.vcard {
+  font-size: 12px;
+}
+
+/* line 929, scss/_base.scss */
+.vcard .avatar {
+  position: absolute;
+  left: 20px;
+  top: 29px;
+  border-radius: 2px;
+}
+
+/* line 935, scss/_base.scss */
+.comment-metadata {
+  font-size: 11px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+/* line 940, scss/_base.scss */
+.comment-reply-link {
+  float: right;
+}
+
+/* line 943, scss/_base.scss */
+.form-allowed-tags code {
+  word-wrap: break-word;
+  white-space: inherit;
+}
+
+/* line 947, scss/_base.scss */
+.comment-respond label {
+  display: block;
+  font-weight: normal;
+}
+
+/* line 951, scss/_base.scss */
+.comment-respond .required {
+  color: #C7254E;
+}
+
+/* line 954, scss/_base.scss */
+#submit {
+  font-size: 12px;
+}
+
+/* line 957, scss/_base.scss */
+.comment-navigation,
+.single .nav-links {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/* line 962, scss/_base.scss */
+.comment-reply-title {
+  font-size: 14px;
+}
+
+/* line 965, scss/_base.scss */
+.comment-reply-link {
+  background: #C1C0C0;
+  border: #C1C0C0;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  /* line 972, scss/_base.scss */
+  .post-inner-content {
+    padding: 20px 25px;
+  }
+
+  /* line 975, scss/_base.scss */
+  .comment-list .children {
+    padding-left: 10px;
+  }
+}
+/* =Attachment styling
+----------------------------------------------- */
+/* line 981, scss/_base.scss */
+#image-navigation .nav-previous a,
+#image-navigation .nav-next a {
+  padding: 5px 20px;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  display: block;
+}
+
+/* line 988, scss/_base.scss */
+#image-navigation .nav-previous a:hover,
+#image-navigation .nav-next a:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* line 993, scss/_base.scss */
+#image-navigation .nav-previous,
+#image-navigation .nav-next {
+  margin: 10px 0;
+}
+
+/* line 997, scss/_base.scss */
+#image-navigation .nav-previous a {
+  float: left;
+}
+
+/* line 1000, scss/_base.scss */
+#image-navigation .nav-next a {
+  float: right;
+}
+
+/* =Gallery
+-------------------------------------------------------------- */
+/* line 1006, scss/_base.scss */
+.gallery {
+  margin-bottom: 20px;
+}
+
+/* line 1009, scss/_base.scss */
+.gallery-item {
+  float: left;
+  margin: 0 4px 4px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 1015, scss/_base.scss */
+.gallery-columns-1 .gallery-item {
+  max-width: 100%;
+}
+
+/* line 1018, scss/_base.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 48%;
+  max-width: -webkit-calc(50% - 4px);
+  max-width: calc(50% - 4px);
+}
+
+/* line 1023, scss/_base.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 32%;
+  max-width: -webkit-calc(33.3% - 4px);
+  max-width: calc(33.3% - 4px);
+}
+
+/* line 1028, scss/_base.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 23%;
+  max-width: -webkit-calc(25% - 4px);
+  max-width: calc(25% - 4px);
+}
+
+/* line 1033, scss/_base.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 19%;
+  max-width: -webkit-calc(20% - 4px);
+  max-width: calc(20% - 4px);
+}
+
+/* line 1038, scss/_base.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 15%;
+  max-width: -webkit-calc(16.7% - 4px);
+  max-width: calc(16.7% - 4px);
+}
+
+/* line 1043, scss/_base.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 13%;
+  max-width: -webkit-calc(14.28% - 4px);
+  max-width: calc(14.28% - 4px);
+}
+
+/* line 1048, scss/_base.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 11%;
+  max-width: -webkit-calc(12.5% - 4px);
+  max-width: calc(12.5% - 4px);
+}
+
+/* line 1053, scss/_base.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 9%;
+  max-width: -webkit-calc(11.1% - 4px);
+  max-width: calc(11.1% - 4px);
+}
+
+/* line 1058, scss/_base.scss */
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+  margin-right: 0;
+}
+
+/* line 1069, scss/_base.scss */
+.gallery-columns-1.gallery-size-medium figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-1.gallery-size-thumbnail figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-2.gallery-size-thumbnail figure.gallery-item:nth-of-type(2n+1),
+.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) {
+  clear: left;
+}
+
+/* line 1075, scss/_base.scss */
+.gallery-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  max-height: 50%;
+  opacity: 0;
+  padding: 6px 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+/* line 1093, scss/_base.scss */
+.gallery-caption:before {
+  content: "";
+  height: 100%;
+  min-height: 49px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 1102, scss/_base.scss */
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* line 1105, scss/_base.scss */
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+  display: none;
+}
+
+/* =Footer
+----------------------------------------------- */
+/* line 1114, scss/_base.scss */
+#footer-area {
+  background-color: #313233;
+  color: #999;
+}
+
+/* line 1118, scss/_base.scss */
+#footer-area a {
+  color: #DADADA;
+}
+
+/* line 1121, scss/_base.scss */
+#footer-area .footer-widget-area {
+  padding: 40px 0 20px 0;
+  overflow: hidden;
+}
+
+/* line 1125, scss/_base.scss */
+#footer-area ul li {
+  border-bottom: 1px solid #444;
+}
+
+/* line 1128, scss/_base.scss */
+#footer-area .site-info nav ul li {
+  border-bottom: none;
+}
+
+/* line 1131, scss/_base.scss */
+.widgettitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: inherit;
+}
+
+/* line 1138, scss/_base.scss */
+#footer-area .widget ul li {
+  list-style: none;
+}
+
+/* line 1141, scss/_base.scss */
+.footer-nav.nav > li {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 1145, scss/_base.scss */
+.footer-nav.nav {
+  float: left;
+  margin-bottom: 2px;
+}
+
+/* line 1149, scss/_base.scss */
+.footer-widget {
+  overflow: hidden;
+}
+
+/* line 1152, scss/_base.scss */
+.copyright {
+  margin-top: 10px;
+  float: right;
+  text-align: right;
+}
+
+/* line 1157, scss/_base.scss */
+.site-footer {
+  background-color: #1F1F1F;
+  padding: 10px 0;
+  border-top: 1px solid #3A3A3A;
+}
+
+/* line 1162, scss/_base.scss */
+.site-info a {
+  color: #777;
+}
+
+/* line 1165, scss/_base.scss */
+.site-info a:hover {
+  color: #999;
+}
+
+/* line 1168, scss/_base.scss */
+#footer-area a:hover {
+  color: #fff;
+}
+
+/* line 1171, scss/_base.scss */
+.site-info {
+  color: #999;
+  font-size: 12px;
+}
+
+/* line 1175, scss/_base.scss */
+.footer-nav.nav > li > a:hover {
+  background-color: transparent;
+}
+
+/* line 1178, scss/_base.scss */
+.scroll-to-top {
+  background: #363636;
+  background: rgba(100, 100, 100, 0.4);
+  color: #FFF;
+  bottom: 4%;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 1198, scss/_base.scss */
+.scroll-to-top:hover {
+  background: #DA4453;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  /* line 1204, scss/_base.scss */
+  .site-info, .copyright {
+    text-align: center;
+  }
+
+  /* line 1207, scss/_base.scss */
+  .footer-nav.nav, .copyright {
+    float: none;
+  }
+}
+/* =Social icons
+----------------------------------------------- */
+/* line 1214, scss/_base.scss */
+#secondary .widget .social-icons a {
+  color: #fff;
+}
+
+/* line 1217, scss/_base.scss */
+.social-icons {
+  position: relative;
+  text-align: center;
+}
+
+/* line 1221, scss/_base.scss */
+#secondary .widget .social-icons {
+  text-align: left;
+}
+
+/* line 1224, scss/_base.scss */
+.social-icons a {
+  font-size: 18px;
+  line-height: 40px;
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background-color: #DADADA;
+  -webkit-transition: background-color  0.5s;
+  -moz-transition: background-color  0.5s;
+  -o-transition: background-color  0.5s;
+  transition: background-color  0.5s;
+}
+
+/* line 1241, scss/_base.scss */
+#footer-area .social-icons a {
+  margin-right: 7px;
+  background-color: #363636;
+  color: #fff;
+}
+
+/* line 1247, scss/_base.scss */
+.social-icons a.facebook:hover {
+  background-color: #4265b9 !important;
+}
+
+/* line 1250, scss/_base.scss */
+.social-icons a.twitter:hover {
+  background-color: #55ACEE !important;
+}
+
+/* line 1253, scss/_base.scss */
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89 !important;
+}
+
+/* line 1256, scss/_base.scss */
+.social-icons a.flickr:hover {
+  background-color: #ff0084 !important;
+}
+
+/* line 1259, scss/_base.scss */
+.social-icons a.googleplus:hover {
+  background-color: #d62408 !important;
+}
+
+/* line 1262, scss/_base.scss */
+.social-icons a.skype:hover {
+  background-color: #0bbff2 !important;
+}
+
+/* line 1265, scss/_base.scss */
+.social-icons a.pinterest:hover {
+  background-color: #c31e26 !important;
+}
+
+/* line 1268, scss/_base.scss */
+.social-icons a.linkedin:hover {
+  background-color: #005987 !important;
+}
+
+/* line 1271, scss/_base.scss */
+.social-icons a.vimeo:hover {
+  background-color: #1bb6ec !important;
+}
+
+/* line 1274, scss/_base.scss */
+.social-icons a.tumblr:hover {
+  background-color: #35506b !important;
+}
+
+/* line 1277, scss/_base.scss */
+.social-icons a.youtube:hover {
+  background-color: #df3333 !important;
+}
+
+/* line 1280, scss/_base.scss */
+.social-icons a.instagram:hover {
+  background-color: #F95B60 !important;
+}
+
+/* line 1283, scss/_base.scss */
+.social-icons a.rss:hover {
+  background-color: #f39c12 !important;
+}
+
+/* line 1286, scss/_base.scss */
+.social-icons a.foursquare:hover {
+  background-color: #2398C9 !important;
+}
+
+/* line 1289, scss/_base.scss */
+.social-icons a.soundcloud:hover {
+  background-color: #F50 !important;
+}
+
+/* line 1292, scss/_base.scss */
+.social-icons a.github:hover {
+  background-color: #4183C4 !important;
+}
+
+/* line 1295, scss/_base.scss */
+.social-icons a.spotify:hover {
+  background-color: #81b71a !important;
+}
+
+/* line 1298, scss/_base.scss */
+.fa-googleplus:before {
+  content: "\f0d5";
+}
+
+/* line 1301, scss/_base.scss */
+.fa-vimeo:before {
+  content: "\f194";
+}
+
+@media (max-width: 992px) {
+  /* line 1306, scss/_base.scss */
+  .site-branding {
+    text-align: center;
+  }
+}
+/* =Call For Action
+----------------------------------------------- */
+/* line 1313, scss/_base.scss */
+.cfa {
+  padding: 30px 0px;
+  background: #FFF;
+  border-bottom: 1px solid #DADADA;
+  text-align: center;
+}
+
+/* line 1319, scss/_base.scss */
+.cfa-text {
+  font-size: 22px;
+  color: #DA4453;
+  display: block;
+  padding-top: 10px;
+}
+
+/* line 1325, scss/_base.scss */
+.cfa-button {
+  background-color: transparent;
+  color: #DA4453;
+  padding: 15px 30px;
+  border-color: #DA4453;
+}
+
+/* line 1331, scss/_base.scss */
+.cfa-button a {
+  color: #DA4453;
+}
+
+/* line 1334, scss/_base.scss */
+.cfa-button:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  /* line 1339, scss/_base.scss */
+  .cfa {
+    padding: 0 0 20px;
+  }
+
+  /* line 1342, scss/_base.scss */
+  .cfa-button {
+    padding: 10px 16px;
+    margin-top: 10px;
+  }
+}
+/* =Elements when no javaScript is present
+----------------------------------------------- */
+/* line 1350, scss/_base.scss */
+#submit,
+.tagcloud,
+.comment-reply-link,
+.widget_rss ul,
+button[type=submit],
+.postform,
+table#wp-calendar {
+  display: none;
+}
+
+/* line 1359, scss/_base.scss */
+.no-js #submit,
+.no-js .tagcloud,
+.no-js .comment-reply-link,
+.no-js .widget_rss ul,
+button[type=submit],
+.no-js .postform,
+.no-js table#wp-calendar {
+  display: block;
+}
+
+/* =Custom Styles
+----------------------------------------------- */
+/* line 9, scss/_rotary.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 14, scss/_rotary.scss */
+body {
+  margin: 0 0 75px;
+  /* bottom = footer height */
+  background-color: initial;
+}
+@media (min-width: 768px) {
+  /* line 14, scss/_rotary.scss */
+  body {
+    margin: 0 0 60px;
+  }
+}
+
+/* line 23, scss/_rotary.scss */
+footer.site-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 23, scss/_rotary.scss */
+  footer.site-footer {
+    height: 60px;
+  }
+}
+
+/* line 34, scss/_rotary.scss */
+.site-footer {
+  background-color: #00246c;
+  padding-bottom: 0.25em;
+}
+@media (min-width: 768px) {
+  /* line 34, scss/_rotary.scss */
+  .site-footer {
+    padding-bottom: 0;
+  }
+}
+
+/* line 44, scss/_rotary.scss */
+h2, h3, h4 {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+/* line 51, scss/_rotary.scss */
+.rotary-heading {
+  width: auto;
+  color: #00246c;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+}
+
+/* line 61, scss/_rotary.scss */
+a {
+  color: #00246c;
+}
+
+/* line 65, scss/_rotary.scss */
+.block {
+  display: block;
+  position: relative;
+}
+
+/* line 71, scss/_rotary.scss */
+.hide {
+  display: none;
+}
+
+/* line 76, scss/_rotary.scss */
+.hentry, .home-widget-area.hentry {
+  margin-bottom: 2em;
+}
+
+/* line 81, scss/_rotary.scss */
+.hentry-category {
+  margin-bottom: 0;
+}
+
+/* line 86, scss/_rotary.scss */
+.excerpt {
+  line-height: 1.5em;
+}
+
+/* line 92, scss/_rotary.scss */
+.comments-link a {
+  font-size: 12px;
+}
+
+/* line 99, scss/_rotary.scss */
+.comment-respond .required {
+  color: #00246c;
+}
+
+/* line 105, scss/_rotary.scss */
+.post-inner-content {
+  padding: 20px 0 0 0;
+}
+
+/* line 121, scss/_rotary.scss */
+.submit {
+  margin-top: 1em;
+}
+
+/* line 125, scss/_rotary.scss */
+.scroll-to-top:hover {
+  background-color: #00246c;
+}
+
+/* line 129, scss/_rotary.scss */
+.btn-default:hover,
+.label-default[href]:hover,
+.label-default[href]:focus,
+.btn-default:hover, .btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+#image-navigation .nav-previous a:hover,
+#image-navigation .nav-next a:hover {
+  background-color: #00246c;
+  border-color: #00246c;
+}
+
+/* line 141, scss/_rotary.scss */
+.btn-default, .label-default {
+  background-color: #00246c;
+  border-color: #00246c;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 150, scss/_rotary.scss */
+.um-57.um input[type=submit].um-button,
+.um-57.um input[type=submit].um-button:focus,
+.um-57.um a.um-button, .um-57.um a.um-button.um-disabled:hover,
+.um-57.um a.um-button.um-disabled:focus,
+.um-57.um a.um-button.um-disabled:active,
+.um-56.um input[type=submit].um-button,
+.um-56.um input[type=submit].um-button:focus,
+.um-56.um a.um-button, .um-56.um a.um-button.um-disabled:hover,
+.um-56.um a.um-button.um-disabled:focus,
+.um-56.um a.um-button.um-disabled:active {
+  background: #00246c !important;
+}
+
+/* line 165, scss/_rotary.scss */
+.flexslider .slides img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 165, scss/_rotary.scss */
+  .flexslider .slides img {
+    height: 32em;
+  }
+}
+
+/* line 174, scss/_rotary.scss */
+.flex-caption h2 {
+  background-color: rgba(0, 36, 108, 0.7);
+}
+/* line 179, scss/_rotary.scss */
+.flex-caption .excerpt {
+  background-color: rgba(254, 189, 17, 0.7);
+  color: #00246c;
+  max-width: 350px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+/* line 191, scss/_rotary.scss */
+.navbar.navbar-default {
+  background-color: #00246c;
+}
+
+/* line 195, scss/_rotary.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #FEBD11;
+  background-color: transparent;
+}
+
+/* line 207, scss/_rotary.scss */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #FEBD11;
+  background-color: #00246c;
+}
+
+/* line 215, scss/_rotary.scss */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: #00246c;
+  color: #FEBD11;
+}
+
+/* line 222, scss/_rotary.scss */
+.navbar-default .navbar-nav .current-menu-ancestor a.dropdown-toggle {
+  color: #FEBD11;
+}
+
+/* line 808, scss/_base.scss */
+/* line 227, scss/_rotary.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li.active > a {
+  color: #00246c;
+}
+
+@media (max-width: 767px) {
+  /* line 794, scss/_base.scss */
+  /* line 233, scss/_rotary.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
+    color: #00246c;
+    background-color: #FEBD11;
+  }
+}
+/* line 241, scss/_rotary.scss */
+.tribe-events-calendar thead th {
+  padding: 0.5em 0;
+}
+
+/* line 246, scss/_rotary.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #FFFFFF;
+}
+
+/* line 250, scss/_rotary.scss */
+.navbar-header {
+  position: relative;
+}
+
+/* line 256, scss/_rotary.scss */
+.rotary-logo {
+  top: 50%;
+  float: left;
+  height: 2em;
+  width: auto;
+  margin-top: -1em;
+  position: absolute;
+}
+@media (min-width: 768px) {
+  /* line 256, scss/_rotary.scss */
+  .rotary-logo {
+    position: relative;
+    width: 100%;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    height: auto;
+  }
+}
+/* line 272, scss/_rotary.scss */
+.rotary-logo a {
+  color: #ffffff;
+  display: block;
+  position: relative;
+}
+/* line 277, scss/_rotary.scss */
+.rotary-logo a img {
+  width: 5em;
+  float: left;
+}
+@media (min-width: 768px) {
+  /* line 277, scss/_rotary.scss */
+  .rotary-logo a img {
+    width: 10em;
+  }
+}
+/* line 285, scss/_rotary.scss */
+.rotary-logo a span {
+  margin-left: 0.5em;
+  font-family: 'Cinzel', serif;
+  height: 2em;
+  line-height: 2em;
+  float: left;
+}
+@media (max-width: 399px) {
+  /* line 285, scss/_rotary.scss */
+  .rotary-logo a span {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 285, scss/_rotary.scss */
+  .rotary-logo a span {
+    display: none;
+  }
+}
+
+/* line 304, scss/_rotary.scss */
+.site-navigation-inner > span {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 304, scss/_rotary.scss */
+  .site-navigation-inner > span {
+    display: block;
+    position: absolute;
+    margin-left: 8em;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    left: 0;
+    bottom: 1.5em;
+  }
+}
+
+/* line 319, scss/_rotary.scss */
+.navbar-header button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+/* line 328, scss/_rotary.scss */
+.navbar-header .btn.focus, .navbar-header .btn:focus, .navbar-header .btn:hover {
+  color: #FFFFFF;
+}
+
+/*...Home Page..............*/
+/* line 334, scss/_rotary.scss */
+.welcome-image {
+  margin-top: 1em;
+}
+@media (min-width: 768px) {
+  /* line 334, scss/_rotary.scss */
+  .welcome-image {
+    margin-top: 0;
+  }
+}
+
+/* line 341, scss/_rotary.scss */
+.home-widget {
+  margin-bottom: 2em;
+}
+
+/* line 346, scss/_rotary.scss */
+.home-widget:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 351, scss/_rotary.scss */
+.hfeed .vcalendar {
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* line 358, scss/_rotary.scss */
+.tribe-events-list-widget ol li {
+  margin: 0;
+}
+
+/* line 367, scss/_rotary.scss */
+.tribe-events-list-widget-events h4.entry-title a {
+  font-size: 1em;
+  line-height: initial;
+}
+/* line 375, scss/_rotary.scss */
+.tribe-events-list-widget-events h4.duration {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+@media (min-width: 768px) {
+  /* line 375, scss/_rotary.scss */
+  .tribe-events-list-widget-events h4.duration {
+    margin-bottom: 0.2em;
+  }
+}
+/* line 388, scss/_rotary.scss */
+.tribe-events-list-widget-events div div .excerpt {
+  font-weight: normal;
+  margin-top: 1em;
+}
+/* line 391, scss/_rotary.scss */
+.tribe-events-list-widget-events div div .excerpt a {
+  display: block;
+  margin: 1em 0 0 0;
+}
+/* line 396, scss/_rotary.scss */
+.tribe-events-list-widget-events div div.duration {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+/* line 407, scss/_rotary.scss */
+.tribe-events-widget-link {
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 412, scss/_rotary.scss */
+.tribe-events-widget-link a {
+  color: #6B6B6B;
+  display: block;
+  line-height: 2.5em;
+}
+
+/* line 420, scss/_rotary.scss */
+.rotary-calendar-icon {
+  display: block;
+  width: 14em;
+  position: relative;
+  margin: 0 auto;
+  transition: none;
+  margin-top: 1em;
+  text-align: center;
+  padding: 10px 12px;
+  background-color: #00246c;
+  transition: background-color 0.3s linear;
+}
+/* line 433, scss/_rotary.scss */
+.rotary-calendar-icon span {
+  margin-left: 1em;
+  float: left;
+  margin-top: 0.2em;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 441, scss/_rotary.scss */
+.rotary-calendar-icon i {
+  float: left;
+  color: white;
+  margin-left: 1em;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  /* line 420, scss/_rotary.scss */
+  .rotary-calendar-icon {
+    position: absolute;
+    width: 12em;
+    top: 0;
+    right: 0;
+    margin-top: 0 !important;
+  }
+  /* line 455, scss/_rotary.scss */
+  .rotary-calendar-icon span {
+    margin-left: 0.5em;
+    float: left;
+  }
+  /* line 461, scss/_rotary.scss */
+  .rotary-calendar-icon i {
+    float: left;
+    margin-left: 0.3em;
+  }
+}
+/* line 467, scss/_rotary.scss */
+.rotary-calendar-icon:hover {
+  background-color: #FFFFFF;
+}
+/* line 469, scss/_rotary.scss */
+.rotary-calendar-icon:hover span, .rotary-calendar-icon:hover i {
+  color: #00246c;
+}
+
+/* line 475, scss/_rotary.scss */
+.event-image {
+  width: 100%;
+}
+
+/* line 482, scss/_rotary.scss */
+.widget ul li.project {
+  margin-top: 1em;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 491, scss/_rotary.scss */
+.widget ul li.project:first-of-type {
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  /* line 491, scss/_rotary.scss */
+  .widget ul li.project:first-of-type {
+    margin-top: 1em;
+  }
+}
+
+/* line 500, scss/_rotary.scss */
+li.project h4.project-title {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 36, 138, 0.8);
+  bottom: 0;
+  padding: 0.5em;
+  margin: 0;
+  color: #FFFFFF;
+}
+@media (min-width: 780px) {
+  /* line 509, scss/_rotary.scss */
+  li.project div > a {
+    height: 10em;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 509, scss/_rotary.scss */
+  li.project div > a {
+    height: 16em;
+  }
+}
+/* line 517, scss/_rotary.scss */
+li.project a {
+  color: #6B6B6B;
+  margin-bottom: 1em;
+}
+/* line 520, scss/_rotary.scss */
+li.project a img {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+/* line 526, scss/_rotary.scss */
+li.project img ~ a {
+  height: 16em;
+}
+/* line 529, scss/_rotary.scss */
+li.project .excerpt {
+  float: left;
+  margin-bottom: 1.5em;
+}
+@media (min-width: 768px) {
+  /* line 529, scss/_rotary.scss */
+  li.project .excerpt {
+    margin-bottom: 0;
+  }
+}
+/* line 535, scss/_rotary.scss */
+li.project .excerpt a:first-of-type {
+  padding: 0 0.5em;
+}
+
+/* line 541, scss/_rotary.scss */
+.read-more-project {
+  background-color: white;
+  border-color: #00246c;
+  color: #00246c !important;
+  display: block;
+  margin: 0;
+  margin-top: 1em;
+}
+/* line 548, scss/_rotary.scss */
+.read-more-project:hover {
+  background-color: #00246c;
+  border-color: white;
+  color: white !important;
+}
+
+/* line 558, scss/_rotary.scss */
+.get-intouch p {
+  margin-bottom: 1em;
+}
+
+/* line 564, scss/_rotary.scss */
+.club-map {
+  margin-top: 1em;
+}
+
+/* line 569, scss/_rotary.scss */
+.contact-details li {
+  border: none;
+  padding-left: 0;
+}
+/* line 574, scss/_rotary.scss */
+.contact-details li i {
+  margin-right: 0.5em;
+  float: left;
+}
+
+/* line 580, scss/_rotary.scss */
+.contact-details, .contact-details a {
+  color: #00246c;
+}
+
+/* line 585, scss/_rotary.scss */
+.address {
+  margin-left: 3em;
+}
+
+/* line 591, scss/_rotary.scss */
+.duties-list {
+  margin-bottom: 0.5em;
+}
+
+/*...End of Home Page..*/
+/*...Project Page..*/
+/* line 600, scss/_rotary.scss */
+.main-content-area {
+  margin-top: 0;
+  padding: 0 50px 45px 50px;
+}
+
+/* line 605, scss/_rotary.scss */
+.post-navigation a,
+.paging-navigation a {
+  border-color: #00246c;
+}
+/* line 608, scss/_rotary.scss */
+.post-navigation a:hover,
+.paging-navigation a:hover {
+  background-color: #00246c;
+  border-color: #00246c;
+}
+
+/* line 614, scss/_rotary.scss */
+.entry-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  margin-top: 1em;
+}
+/* line 618, scss/_rotary.scss */
+.entry-title.homepage {
+  margin-top: 0;
+}
+/* line 621, scss/_rotary.scss */
+.entry-title a:hover {
+  color: inherit;
+}
+
+/* line 626, scss/_rotary.scss */
+.archive-page {
+  padding: 0;
+}
+/* line 630, scss/_rotary.scss */
+.archive-page .entry-meta span {
+  margin-right: 5px;
+}
+
+/* line 636, scss/_rotary.scss */
+.blog-item-wrap {
+  margin-top: 1em;
+}
+
+/* line 643, scss/_rotary.scss */
+.blog-item-wrap.col-md-4 > a {
+  display: block;
+  height: 10.5em;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  /* line 643, scss/_rotary.scss */
+  .blog-item-wrap.col-md-4 > a {
+    height: 20em;
+  }
+}
+/* line 649, scss/_rotary.scss */
+.blog-item-wrap.col-md-4 > a img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 656, scss/_rotary.scss */
+div.main-content-area-single, div.main-content-area-single nav {
+  padding: 0 45px;
+}
+@media (min-width: 768px) {
+  /* line 656, scss/_rotary.scss */
+  div.main-content-area-single, div.main-content-area-single nav {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* line 667, scss/_rotary.scss */
+.single-post-heading {
+  margin-top: 40px;
+}
+
+/* line 672, scss/_rotary.scss */
+.single-post-heading h1 {
+  margin: 0 auto;
+}
+
+/* line 677, scss/_rotary.scss */
+div.gallery-container {
+  text-align: center;
+}
+/* line 681, scss/_rotary.scss */
+div.gallery-container .gallery {
+  margin-top: 2em;
+  display: inline-block;
+}
+
+/* line 689, scss/_rotary.scss */
+nav.post-navigation {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/*Calendar*/
+/* line 696, scss/_rotary.scss */
+.rotary-heading.calendar {
+  width: auto;
+  color: #00246c;
+  font-size: 28px;
+  padding-bottom: 0.25em;
+  margin: 0;
+}
+
+/* line 704, scss/_rotary.scss */
+.tribe-events-single-section-title {
+  margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+  /* line 704, scss/_rotary.scss */
+  .tribe-events-single-section-title {
+    margin-top: 1em;
+  }
+}
+
+/* line 713, scss/_rotary.scss */
+.tribe-events-list div.tribe-events-event-image {
+  margin: 1em 3% 0 0;
+}
+
+/* line 718, scss/_rotary.scss */
+.tribe-events-list div.tribe-events-event-image a {
+  display: block;
+}
+
+/* line 723, scss/_rotary.scss */
+.description.entry-summary {
+  text-align: left;
+}
+
+/* line 728, scss/_rotary.scss */
+.tribe-events-read-more {
+  text-align: right;
+  display: block;
+}
+
+/* line 734, scss/_rotary.scss */
+.tribe-events-event-meta-duties h4 {
+  display: none;
+}
+
+/* line 740, scss/_rotary.scss */
+.tribe-events-event-meta-duties table {
+  width: 100%;
+  border: 1px solid #eee;
+  margin-top: 1em;
+}
+
+/* line 748, scss/_rotary.scss */
+.tribe-events-event-meta-duties table th {
+  font-weight: bold;
+  padding: 1em 0 0 1em;
+}
+
+/* line 754, scss/_rotary.scss */
+.tribe-events-event-meta-duties table td {
+  padding: 0.25em 0 0.25em 1em;
+}
+
+/* line 760, scss/_rotary.scss */
+.tribe-events-event-meta-duties table tr:last-of-type td {
+  padding-bottom: 1em;
+}
+
+/* line 765, scss/_rotary.scss */
+.single-tribe_events .tribe-events-event-image {
+  text-align: center;
+}
+
+/* line 770, scss/_rotary.scss */
+.post-inner-content.event {
+  padding-top: 0;
+}
+
+/*Members Directory*/
+/* line 777, scss/_rotary.scss */
+div.um-member {
+  padding: 0 20px;
+}
+/* line 781, scss/_rotary.scss */
+div.um-member .um-member-photo {
+  padding: 20px 0 10px;
+}
+/* line 785, scss/_rotary.scss */
+div.um-member .um-member-name {
+  margin: 0 10px 10px;
+}
+/* line 787, scss/_rotary.scss */
+div.um-member .um-member-name a {
+  color: #00246c;
+}
+/* line 792, scss/_rotary.scss */
+div.um-member .um-member-meta {
+  display: block;
+  margin: 10px 0px 0;
+  padding: 0px 0;
+  border-color: #00246c;
+}
+/* line 799, scss/_rotary.scss */
+div.um-member .um-member-metaline {
+  padding: 15px 0 0px;
+}
+/* line 801, scss/_rotary.scss */
+div.um-member .um-member-metaline span:first-of-type {
+  font-weight: bold;
+}
+
+/*Desktop Styles*/
+@media (min-width: 768px) {
+  /* line 812, scss/_rotary.scss */
+  .post-margin {
+    margin-top: 40px;
+  }
+
+  /* line 817, scss/_rotary.scss */
+  .no-padding-left {
+    padding-left: 0;
+    padding-right: 2em;
+  }
+
+  /* line 823, scss/_rotary.scss */
+  .no-padding-right {
+    padding-right: 0;
+  }
+  /* line 826, scss/_rotary.scss */
+  .no-padding-right img {
+    margin-top: 1em;
+  }
+
+  /* line 831, scss/_rotary.scss */
+  .hfeed .vcalendar {
+    text-align: left;
+  }
+
+  /* line 835, scss/_rotary.scss */
+  .navbar.navbar-default {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  /* line 841, scss/_rotary.scss */
+  .nav.navbar-nav {
+    position: absolute;
+    left: 0;
+    bottom: 1em;
+    margin-right: 1em;
+    margin-left: 11em;
+  }
+
+  /* line 850, scss/_rotary.scss */
+  .navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: normal !important;
+  }
+
+  /* line 856, scss/_rotary.scss */
+  .duration .excerpt a {
+    width: 8em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
